@@ -30,7 +30,10 @@ func main() {
 			log.Fatalf("Short Url Create error, %v", err)
 		}
 		log.Printf("short url: %v", su)
+
+        log.Printf("id: %d, su.Id: %d", GenId(su.Slug), su.Id)
 	}
+
 
 	fmt.Println("stop...")
 }

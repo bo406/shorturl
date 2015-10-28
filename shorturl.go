@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"log"
 )
 
 var (
@@ -27,8 +26,7 @@ func ShortUrlCreate(url string) (*ShortUrl, error) {
 	}
 
 	s := &ShortUrl{Id: id, URL: url}
-
 	s.Slug = GenKey(s.Id)
-	log.Printf("slug: %s", s.Slug)
+
 	return s, nil
 }
