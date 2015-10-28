@@ -31,9 +31,8 @@ func main() {
 		}
 		log.Printf("short url: %v", su)
 
-        log.Printf("id: %d, su.Id: %d", GenId(su.Slug), su.Id)
+		log.Printf("id: %d, su.Id: %d", GenId(su.Slug), su.Id)
 	}
-
 
 	fmt.Println("stop...")
 }
