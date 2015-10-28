@@ -16,7 +16,7 @@ func makeDecodeMap() map[byte]int64 {
 }
 
 func GenKey(n int64) string {
-	if n == 0 {
+	if n <= 0 {
 		return string(keyChars[0])
 	}
 
