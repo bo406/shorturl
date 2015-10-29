@@ -7,8 +7,8 @@ func TestEncoder(t *testing.T) {
 	counter.Run()
 	n := <-counter.ch
 	s := generateURL(n)
-	if s != "F5E" {
-		t.Fatalf("gen key error, id: %d, %s, %s", n, s, "F5E")
+	if s != "0aU" {
+		t.Fatalf("gen key error, id: %d, %s, %s", n, s, "0aU")
 	}
 
 	id := decodeURL(s)

@@ -11,7 +11,7 @@ import (
 )
 
 const ALPHABET string = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const BASE float64 = 49
+const BASE float64 = 62
 
 func generateURL(n int64) string {
 	s := ""
