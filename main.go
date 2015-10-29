@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 )
 
@@ -18,7 +17,7 @@ var (
 )
 
 func main() {
-	fmt.Println("start...")
+	log.Println("start...")
 	counter.Run()
 
 	i := len(longUrls)
@@ -34,5 +33,5 @@ func main() {
 		log.Printf("id: %d, su.Id: %d", GenId(su.Slug), su.Id)
 	}
 
-	fmt.Println("stop...")
+	log.Println("stop...")
 }

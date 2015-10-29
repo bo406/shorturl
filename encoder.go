@@ -1,10 +1,5 @@
 package main
 
-/*
-实现算法与key中的一样，效率稍低一些
-BenchmarkEncoder-4	 2000000	       898 ns/op
-BenchmarkGenKen-4 	 3000000	       555 ns/op
-*/
 import (
 	"math"
 	"strings"
