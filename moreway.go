@@ -48,9 +48,7 @@ func md5ShortUrl1(url string) string {
 		var chHex = 0x3FFFFFFF & bit
 		var outchars = ""
 		for i := 0; i < 6; i++ {
-			//base 62 3D base32 1F
-			//比base值少2
-			val := 0x0000001F & chHex
+			val := 0x0000003d & chHex
 			outchars += ALPHABET[val : val+1]
 			chHex = chHex >> 5
 		}
