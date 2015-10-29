@@ -1,4 +1,4 @@
-package main
+package shorturl
 
 import (
 	"errors"
@@ -19,8 +19,7 @@ func (s *ShortUrl) String() string {
 	return fmt.Sprintf("%s, %s", s.Slug, s.URL)
 }
 
-func ShortUrlCreate(url string) (*ShortUrl, error) {
-	id := <-counter.ch
+func ShortUrlCreate(url string, id int64) (*ShortUrl, error) {
 	if id <= 0 {
 		return nil, ErrCounter
 	}

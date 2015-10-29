@@ -1,4 +1,4 @@
-package main
+package shorturl
 
 var (
 	keyChars  = []byte("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")

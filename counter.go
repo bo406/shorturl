@@ -1,4 +1,4 @@
-package main
+package shorturl
 
 import (
 	"log"
@@ -17,7 +17,11 @@ func NewCounter(next_id int64) *Counter {
 	}
 }
 
-func (c Counter) Run() {
+func(c *Counter) GetCount() int64{
+    return <- c.ch
+}
+
+func (c *Counter) Run() {
 	go func() {
 		defer func() {
 			if r := recover(); r != nil {
@@ -26,9 +30,9 @@ func (c Counter) Run() {
 		}()
 		for {
 			if c.ch != nil {
-				c.ch <- atomic.LoadInt64(&c.next)
-				atomic.AddInt64(&c.next, 1)
-			} else {
+                c.ch <- atomic.LoadInt64(&c.next)
+                atomic.AddInt64(&c.next, 1)
+            } else {
 				log.Print("Counter is closed.")
 			}
 		}
