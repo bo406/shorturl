@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"sync/atomic"
 )
 
 type Counter struct {
@@ -25,8 +26,8 @@ func (c Counter) Run() {
 		}()
 		for {
 			if c.ch != nil {
-				c.ch <- c.next
-				c.next++
+				c.ch <- atomic.LoadInt64(&c.next)
+				atomic.AddInt64(&c.next, 1)
 			} else {
 				log.Print("Counter is closed.")
 			}
