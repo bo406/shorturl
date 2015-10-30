@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bo406/shorturl"
+	"github.com/philipbo/shorturl"
 	"log"
 )
 
@@ -20,17 +20,17 @@ func main() {
 
 	counter := shorturl.NewCounter(int64(100000))
 	counter.Run()
-    i := len(longUrls)
-    for i > 0 {
-        i--
-        longUrl := longUrls[i]
-        su, err := shorturl.ShortUrlCreate(longUrl, counter.GetCount())
-        if err != nil {
-            log.Fatalf("Short Url Create error, %v", err)
-        }
-        log.Printf("short url: %v", su)
-        log.Printf("id: %d, su.Id: %d", shorturl.GenId(su.Slug), su.Id)
-    }
+	i := len(longUrls)
+	for i > 0 {
+		i--
+		longUrl := longUrls[i]
+		su, err := shorturl.ShortUrlCreate(longUrl, counter.GetCount())
+		if err != nil {
+			log.Fatalf("Short Url Create error, %v", err)
+		}
+		log.Printf("short url: %v", su)
+		log.Printf("id: %d, su.Id: %d", shorturl.GenId(su.Slug), su.Id)
+	}
 
 	log.Println("stop...")
 }
