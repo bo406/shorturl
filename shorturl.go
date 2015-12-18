@@ -16,7 +16,7 @@ type ShortUrl struct {
 }
 
 func (s *ShortUrl) String() string {
-	return fmt.Sprintf("%s, %s", s.Slug, s.URL)
+	return fmt.Sprintf("%d, %s, %s", s.Id, s.Slug, s.URL)
 }
 
 func ShortUrlCreate(url string, id int64) (*ShortUrl, error) {

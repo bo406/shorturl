@@ -16,8 +16,6 @@ var (
 )
 
 func main() {
-	log.Println("start...")
-
 	counter := shorturl.NewCounter(int64(100000))
 	counter.Run()
 	i := len(longUrls)
@@ -26,11 +24,8 @@ func main() {
 		longUrl := longUrls[i]
 		su, err := shorturl.ShortUrlCreate(longUrl, counter.GetCount())
 		if err != nil {
-			log.Fatalf("Short Url Create error, %v", err)
+			log.Fatalf("ShortURL Create error, %v", err)
 		}
-		log.Printf("short url: %v", su)
-		log.Printf("id: %d, su.Id: %d", shorturl.GenId(su.Slug), su.Id)
+		log.Printf("ShortURL: %v", su.String())
 	}
-
-	log.Println("stop...")
 }
